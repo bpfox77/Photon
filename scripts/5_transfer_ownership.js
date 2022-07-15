@@ -1,6 +1,6 @@
-// scripts/transfer_ownership.js
 // $ npx hardhat run scripts/transfer_ownership.js --network rinkeby
 // this is not working. apparently with upgradeable scripts there's no .admin and you're supposed to use
+// instance but I don't know how or where to set that variable
 
 async function main() {
   const gnosisSafe = '0x08f0982764c45755c15Ae8Ee3EC2eB5c79bC76a8';
@@ -12,9 +12,9 @@ async function main() {
   // UUPS and beacon proxies do not use admin addresses. UUPS proxies rely on an _authorizeUpgrade function
   // to be overridden to include access restriction to the upgrade mechanism
 
-  // I've tried to solve the instance issue with these attempts
-  //const instance = await instance.transferOwnership(gnosisSafe)
-  // await upgrades.instance.transferOwnership(gnosisSafe, { kind: 'uups' });
+  // I've tried to solve the instance issue with these attempts but neither work
+  const instance = await instance.transferOwnership(gnosisSafe);
+  await upgrades.instance.transferOwnership(gnosisSafe, { kind: 'uups' });
 
   console.log('Transferred ownership of ProxyAdmin to:', gnosisSafe);
 }
