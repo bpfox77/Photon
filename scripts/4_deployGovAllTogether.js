@@ -1,5 +1,5 @@
 // i can't remember where I found this, but it seems the correct order to tie things together?
-// i don't have a timelock deploy yet
+// i don't have a TimeLock deploy yet
 
 async function main() {
   const PhotonAddress = '0x63Be7EC1710323Ec48e5521C752a7d77b6E70d9A';
@@ -16,11 +16,11 @@ async function main() {
   //const timelockController = await TimelockController.attach(TimelockAddress);
 
   // We get the contract to deploy
-  const MyGovernor = await ethers.getContractFactory('MyGovernor');
-  console.log('Deploying MyGovernor');
-  const myGovernor = await MyGovernor.deploy('0xfF24...', '0x36A...');
-  const deployedGovernor = await myGovernor.deployed();
-  console.log('MyGovernor deployed to:', myGovernor.address);
+  const NowDao = await ethers.getContractFactory('NowDao');
+  console.log('Deploying NowDao');
+  const nowdao = await NowDao.deploy('0x63Be...', '0x36A...'); // second address no good
+  const deployedNowDao = await nowdao.deployed();
+  console.log('NowDao deployed to:', nowdao.address);
 }
 
 main()
