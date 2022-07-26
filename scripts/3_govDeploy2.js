@@ -4,8 +4,8 @@ const { ethers, upgrades } = require('hardhat');
 
 async function main() {
   // Deploying
-  const NowDao = await ethers.getContractFactory('NowDao');
-  const instance = await upgrades.deployProxy(NowDao, { kind: 'uups' });
+  const Nowdao = await ethers.getContractFactory('Nowdao');
+  const instance = await upgrades.deployProxy(Nowdao, { kind: 'uups' });
   await instance.deployed();
   console.log(instance.address);
 }

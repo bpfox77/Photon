@@ -1,5 +1,5 @@
 // i can't remember where I found this, but it seems the correct order to tie things together?
-// i don't have a TimeLock deploy yet
+// i don't have a TimeLock deploy address yet
 
 async function main() {
   const PhotonAddress = '0x63Be7EC1710323Ec48e5521C752a7d77b6E70d9A';
