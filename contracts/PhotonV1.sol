@@ -1,4 +1,5 @@
-// I deployed this again with 
+// per my note. This is deployed through 
+// npx hardhat run scripts/1_deployProxy.js --network rinkeby
 
 
 // SPDX-License-Identifier: MIT
